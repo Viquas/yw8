@@ -1,0 +1,191 @@
+.logo-image{
+  width:55px;
+  height:55px;
+  margin-top:10px;
+  margin-bottom:10px;
+  margin-left:10px;
+}
+.body.modal-open {
+    overflow: hidden;
+}
+
+
+.header_line{
+  text-align: center;
+}
+
+.header_subline{
+  text-align: center;
+  margin-top:3em;
+}
+h3.header_subline{
+
+  text-align: center;
+}
+
+.dropdown{
+   width:60%;
+    margin: auto;
+    border: none;
+     position: absolute;
+    top: 110%;
+    right: 0;
+    width: 200px;
+    height: auto;
+    opacity: 0;
+    transition: all 0.1s;
+    background: #232323;
+}
+.subnav li {
+    float: none;
+}
+.subnav li a {
+    border-bottom: 1px solid #2e2e2e;
+}
+
+.input-transparent{
+    width:60%;
+    margin: auto;
+    border: none;
+    height:50px;
+    background: url("../img/search_icon.png") no-repeat  3px 7px;
+    background-size: 30px;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding-left:40px;
+    color: white;
+    font-size: 20px;
+}
+
+
+@media only screen and (max-width: 500px) {
+.input-transparent{
+    width:80%;
+  }
+
+
+.tt-dropdown-menu{
+   width:80%;
+}
+
+
+}
+
+
+
+
+
+.form-control::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+   }
+.form-control:-moz-placeholder {
+ color: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+   }
+.form-control::-moz-placeholder {
+color: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+}
+.form-control:-ms-input-placeholder {
+ color: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+}
+
+.playstore{
+  display: block;
+    margin: auto;
+    max-width: 200px;
+    vertical-align: center;
+    margin-top:20px;
+}
+
+.logo{
+  display: block;
+    margin: auto;
+    max-height: 100px;
+}
+
+.brands{
+  max-width: 80px;
+   margin: 0 auto;
+}
+
+.b-height{
+  max-height: 50px;
+}
+
+
+@media only screen and (max-width: 500px) {
+.playstore{
+  margin-top:10px;
+    min-width: 80px;
+
+}
+.logo{
+
+    max-height: 80px;
+}
+
+.b-height{
+  max-height: 60px;
+}
+.brands{
+  max-width: 60px;
+   margin: 0 auto;
+}
+
+}
+.bottom-links{
+  top:90%;
+}
+
+.bottom{
+  position: relative;
+padding-top: 10%;
+}
+
+a{
+ font-color:black;
+}
+.black-text {
+
+  font-color:rgba(253, 253, 253, 0.6) !important;
+}
+
+
+.modal-title{
+  color:white;
+}
+
+
+.redBackground{
+background-color:#f44336;
+}
+.purpleBackground{
+background-color:#7b53c0;
+padding-top:10px;
+padding-bottom:10px;
+}
+.greenBackground{
+background-color:#00bfa5
+}
+
+
+.pad-top-down{
+  padding-top:10px 10px;
+
+
+}
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none;
+}
+
+
+@media screen and (max-width: 768px){
+
+  *[class*='col-xs']{
+
+    padding:10px;
+  }
+
+}
