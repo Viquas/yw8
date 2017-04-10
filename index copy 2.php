@@ -268,7 +268,6 @@ mixpanel.init("f6b716b475b4939a5180bdd8bed61043");</script><!-- end Mixpanel -->
          var app = angular.module('main', []);
          app.controller('searchController', function($scope, $http, $timeout) {
 
-
           var restaurant;
           var restaurant_id;
           var id = 0;
@@ -284,9 +283,8 @@ mixpanel.init("f6b716b475b4939a5180bdd8bed61043");</script><!-- end Mixpanel -->
           $scope.isOpen = true;
           $scope.isAlternate = true;
           $scope.isHideBrand = false;
-          $scope.searchterm = '';
-         $scope.searchRestaurant = function(){
 
+         $scope.searchRestaurant = function(){
 
          var url = "https://fooshu.com/api/restaurant/suggest/?query="+$scope.search;
 
@@ -306,7 +304,7 @@ mixpanel.init("f6b716b475b4939a5180bdd8bed61043");</script><!-- end Mixpanel -->
                     });
              }
 
-              $scope.searchterm = $scope.search;
+
              if(id == 0){
 
                 setTimeout(suggest(restaurant), 100 );
@@ -316,19 +314,17 @@ mixpanel.init("f6b716b475b4939a5180bdd8bed61043");</script><!-- end Mixpanel -->
 
             }).
             error(function(status) {
-            // console.log(status);
+            console.log(status);
 
             });
 
         }
 
         $scope.start= function(data){
-
            id = restaurant_id[data];
             $scope.search = data.value;
             if(id > 0){
                 $scope.detail();
-
             }
                     clear();
         }
@@ -345,7 +341,7 @@ mixpanel.init("f6b716b475b4939a5180bdd8bed61043");</script><!-- end Mixpanel -->
 
         $scope.detail = function(){
           var res_id = id;
-          var str  = $scope.search;
+
              $http({
                 method: 'get',
                 url: 'https://fooshu.com/api/restaurant/'+id+'/details/'
@@ -367,9 +363,9 @@ mixpanel.init("f6b716b475b4939a5180bdd8bed61043");</script><!-- end Mixpanel -->
                     $scope.waiting_time_value = waitingTime.wait_time_in_mins;
 
                     $scope.isOpen = details.is_open_now;
-                     $scope.addSearch($scope.resturant_title, $scope.resturant_address);
+                     $scope.addSearch($scope.search,'nill',$scope.resturant_title, $scope.resturant_address);
                     if(($scope.waiting_time_value != 0) || !$scope.isOpen){
-                      // console.log(res_id);
+                      console.log(res_id);
                             getSimilar(res_id);
                     }else{
                        setTimeout(activateModal(restaurant), 100 );
@@ -412,11 +408,10 @@ mixpanel.init("f6b716b475b4939a5180bdd8bed61043");</script><!-- end Mixpanel -->
             id=0;
         }
 
-        $scope.addSearch = function(rest_name,rest_add){
-
+        $scope.addSearch = function(str,user,rest_name,rest_add){
               $.post("post_search.php", {
-                  str : $scope.searchterm,
-
+                  str : str,
+                    urser: user,
                     restaurant: rest_name,
                     resturant_address:rest_add
 
@@ -424,10 +419,10 @@ mixpanel.init("f6b716b475b4939a5180bdd8bed61043");</script><!-- end Mixpanel -->
 
     var print = jQuery.parseJSON(result);
     if (print.status == 200) {
-      // console.log(print);
+      console.log(print);
 
 } else {
-  console.log(print);
+  console.log(print.status);
 
 }
 });
